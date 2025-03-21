@@ -5,13 +5,18 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "scan": "yarn dev & npx react-scan@latest",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@types/react-router-dom": "^5.3.3",
+    "pexels": "^1.4.0",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "6",
+    "react-scan": "^0.3.2"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

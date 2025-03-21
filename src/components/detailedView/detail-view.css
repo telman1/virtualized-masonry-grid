@@ -1,0 +1,11 @@
+.image-detail-view {
+    text-align: 'center';
+    padding: '20px';
+    margin: 0 auto;
+}
+
+.image-detail-view img {
+    width: '80%';
+    max-width: '800';
+    height: 'auto'
+}
