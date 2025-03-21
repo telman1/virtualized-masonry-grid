@@ -4,6 +4,11 @@ import {BrowserRouter} from "react-router-dom";
 import './index.css'
 import App from './App.tsx'
 import {ImageProvider} from "./context/ImageContext.tsx";
+import { scan } from "react-scan";
+
+scan({
+  enabled: true,
+});
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
