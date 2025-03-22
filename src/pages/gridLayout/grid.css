@@ -7,15 +7,11 @@ img {
 
 .grid-wrapper > div {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.grid-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
-}
+
 
 .grid-wrapper {
     display: grid;
@@ -36,10 +32,5 @@ img {
 }
 .grid-wrapper .big-tall {
     grid-column: span 2;
-    grid-row: span 3;
+    grid-row: span 4;
 }
-
-/*.grid-wrapper .medium {*/
-/*    grid-column: span 3/2;*/
-/*    grid-row: span 2;*/
-/*}*/

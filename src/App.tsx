@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import GridLayout from "./components/gridLayout/GridLayout.tsx";
-import DetailedView from "./components/detailedView/DetailedView.tsx";
+import GridLayout from "./pages/gridLayout/GridLayout.tsx";
+import DetailedView from "./pages/detailedView/DetailedView.tsx";
 import {ROUTES} from "./helpers/constants.ts";
 import './App.css'
 

@@ -1,13 +1,18 @@
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
-import { Image } from "../types/types";
+import {createContext, useContext, useState, useEffect, ReactNode, useMemo} from "react";
+import {Image} from "../types/types";
 import {createClient} from 'pexels';
-const client = createClient('I7bLNHqMksgoy0dfiJbgQAuopLKbGYxR5B3Y2ldnWnXKwEZZQBBvIec4');
+const clientId = import.meta.env.VITE_PEXELS_ACCESS_KEY;
+const client = createClient(clientId);
 
 interface ImageContextType {
   images: Image[];
   loading: boolean;
   error: string | null;
   nextPage: () => void;
+  filteredImages: Image[];
+  searchTerm: string;
+  setSearchTerm: (term: string) => void;
+  setImages: (images: Image[]) => void;
 }
 
 const ImageContext = createContext<ImageContextType | undefined>(undefined);
@@ -15,10 +20,17 @@ const ImageContext = createContext<ImageContextType | undefined>(undefined);
 export const ImageProvider = ({ children }: { children: ReactNode }) => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<Image[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
-  const fetchImages = async (page) => {
+  const filteredImages = useMemo(() => {
+    return images.filter((img) =>
+      img.photographer?.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [images, searchTerm]);
+
+  const fetchImages = async (page: number) => {
     try {
       setLoading(true);
       setError(null);
@@ -36,13 +48,11 @@ export const ImageProvider = ({ children }: { children: ReactNode }) => {
     }
   };
 
-  const nextPage = () => {
-    setPage(prev => {
-      const next = prev + 1
-      fetchImages(next);
-      return next;
-    });
-  };
+  const nextPage = () => setPage((prev) => prev + 1);
+
+  useEffect(() => {
+    fetchImages(page);
+  }, [page]);
 
   useEffect(() => {
     if (images.length === 0) {
@@ -53,7 +63,7 @@ export const ImageProvider = ({ children }: { children: ReactNode }) => {
   }, []);
 
   return (
-    <ImageContext.Provider value={{ images, loading, error, nextPage }}>
+    <ImageContext.Provider value={{ images, loading, error, nextPage, searchTerm, setSearchTerm, filteredImages, setImages }}>
       {children}
     </ImageContext.Provider>
   );
