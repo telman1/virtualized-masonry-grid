@@ -5,6 +5,7 @@ export const ROUTES = {
 };
 
 export const UI_TEXT = {
+  VIRTUALIZED_MASONRY_GRID: 'Virtualized Masonry Grid',
   LOAD_MORE: 'Load more',
   BACK_BUTTON: "🔙 Go Back",
   LOADING: "Loading ⟳⟳⟳",

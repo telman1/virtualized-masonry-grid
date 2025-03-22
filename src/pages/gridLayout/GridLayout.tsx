@@ -3,8 +3,8 @@ import {useImages} from "../../context/ImageContext.tsx";
 import {UI_TEXT} from "../../helpers/constants.ts";
 import './grid.css';
 import Card from "../../components/card/Card.tsx";
-import Search from "../../components/search/Search.tsx";
 import NoDataFound from "../../components/noDataFound/NoDataFound.tsx";
+import Navbar from "../../components/navbar/Navbar.tsx";
 
 const GridLayout = () => {
   const {images, loading, nextPage, filteredImages} = useImages();
@@ -18,7 +18,7 @@ const GridLayout = () => {
 
   return (
     <>
-      <Search />
+      <Navbar />
       {!filteredImages.length ? <NoDataFound /> : (
         <>
           <div className="grid-wrapper">
