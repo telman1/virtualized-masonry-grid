@@ -2,8 +2,8 @@ import React, {useEffect, useState} from 'react';
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import {createClient} from 'pexels';
-const client = createClient('I7bLNHqMksgoy0dfiJbgQAuopLKbGYxR5B3Y2ldnWnXKwEZZQBBvIec4');
-import './detail-view.css'
+const clientId = import.meta.env.VITE_PEXELS_ACCESS_KEY;
+const client = createClient(clientId);
 import {calculateImageContainerSize} from "../../helpers/helpers.ts";
 import {UI_TEXT} from "../../helpers/constants.ts";
 
@@ -36,7 +36,7 @@ const DetailedView = () => {
     >
       <button onClick={() => navigate(-1)}>{UI_TEXT.BACK_BUTTON}</button>
       <h2>{imageData.alt}</h2>
-      <h3>Photographer - {imageData.photographer}</h3>
+      <h3>{UI_TEXT.PHOTOGRAPHER} - {imageData.photographer}</h3>
       <img
         src={imageData.src.large2x}
         alt={imageData.alt}
