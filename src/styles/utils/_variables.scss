@@ -1,0 +1,17 @@
+$primary-color: #646cff;
+$secondary-color: #666;
+$text-color: #333;
+$background-color: #242424;
+$button-bg: #1a1a1a;
+
+$font-stack: system-ui, Avenir, Helvetica, Arial, sans-serif;
+
+$border-radius: 8px;
+$container-width: 1280px;
+$global-padding: 2rem;
+
+$breakpoints: (
+        small: 600px,
+        medium: 900px,
+        large: 1280px
+);

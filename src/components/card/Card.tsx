@@ -2,7 +2,6 @@ import React from 'react';
 import {setImageSize} from "../../helpers/helpers.ts";
 import {Link} from "react-router-dom";
 import {ROUTES} from "../../helpers/constants.ts";
-import './card.css';
 
 const Card = ({image}) => {
   return (

@@ -1,7 +1,6 @@
 import React, {memo} from 'react';
 import {useImages} from "../../context/ImageContext.tsx";
 import {UI_TEXT} from "../../helpers/constants.ts";
-import './grid.css';
 import Card from "../../components/card/Card.tsx";
 import NoDataFound from "../../components/noDataFound/NoDataFound.tsx";
 import Navbar from "../../components/navbar/Navbar.tsx";

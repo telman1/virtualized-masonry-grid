@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import {createClient} from 'pexels';
 const clientId = import.meta.env.VITE_PEXELS_ACCESS_KEY;
 const client = createClient(clientId);
-import './detail-view.css'
 import {calculateImageContainerSize} from "../../helpers/helpers.ts";
 import {UI_TEXT} from "../../helpers/constants.ts";
 

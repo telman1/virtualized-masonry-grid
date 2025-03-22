@@ -1,5 +1,4 @@
 import React from 'react';
-import './no-data-found.css'
 import {UI_TEXT} from "../../helpers/constants.ts";
 
 const NoDataFound: React.FC = () => {

@@ -1,6 +1,5 @@
 import React from "react";
 import Search from "../search/Search.tsx";
-import './navbar.css'
 import {UI_TEXT} from "../../helpers/constants.ts";
 
 const Navbar: React.FC = () => {
