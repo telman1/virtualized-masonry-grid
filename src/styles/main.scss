@@ -1,19 +1,18 @@
-@import "utils/variables";
-@import "base/reset";
-@import "base/typography";
-@import "components/card";
-@import "components/navbar";
-@import "components/no-data";
-@import "pages/grid";
-@import "pages/detailed-view";
+@use "utils/variables" as vars;
+@use "base/typography";
+@use "components/card";
+@use "components/navbar";
+@use "components/no-data";
+@use 'components/loading';
+@use "pages/grid";
 
 body {
-  padding: $global-padding;
+  padding: vars.$global-padding;
 }
 
 #root {
   width: 100%;
-  max-width: $container-width;
+  max-width: vars.$container-width;
   margin: 0 auto;
   text-align: center;
 }

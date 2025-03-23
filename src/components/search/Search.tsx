@@ -1,7 +1,7 @@
 import {ChangeEvent, useEffect, useState} from 'react';
-import {useImages} from "../../context/ImageContext.tsx";
-import {useDebounce} from "../../hooks/useDebounce.tsx";
-import {UI_TEXT} from "../../helpers/constants.ts";
+import {useImages} from "@/context/ImageContext.tsx";
+import {useDebounce} from "@/hooks/useDebounce.tsx";
+import {UI_TEXT} from "@/helpers/constants.ts";
 
 const SearchBar = () => {
   const { setSearchTerm } = useImages();

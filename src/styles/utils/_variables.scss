@@ -1,8 +1,16 @@
 $primary-color: #646cff;
 $secondary-color: #666;
+$error-color: #d32f2f;
+$error-bg: rgba(255, 0, 0, 0.1);
 $text-color: #333;
 $background-color: #242424;
-$button-bg: #1a1a1a;
+$button-bg: #cccccc;
+
+$font-stack: "Arial, sans-serif";
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 18px;
+$font-weight-bold: 700;
 
 $font-stack: system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -11,7 +19,7 @@ $container-width: 1280px;
 $global-padding: 2rem;
 
 $breakpoints: (
-        small: 600px,
-        medium: 900px,
-        large: 1280px
+  small: 600px,
+  medium: 900px,
+  large: 1280px
 );

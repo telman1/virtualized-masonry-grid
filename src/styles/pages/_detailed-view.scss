@@ -1,11 +1,16 @@
 .image-detail-view {
   text-align: center;
-  padding: 20px;
+  padding: 0 20px;
   margin: 0 auto;
 
   img {
-    width: 80%;
-    max-width: 800px;
+    width: 100%;
+    max-width: 1000px;
     height: auto;
+  }
+
+  h2, h3 {
+    font-size: 1rem;
+    font-weight: normal;
   }
 }

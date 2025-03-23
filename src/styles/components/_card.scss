@@ -1,10 +1,13 @@
+@use "../utils/variables" as vars;
+@use "sass:color";
+
 .grid-image-name {
   width: 100%;
   z-index: 100;
   position: absolute;
   font-size: 0.875rem;
-  color: $text-color;
-  background-color: lighten($background-color, 40%);
+  color: vars.$text-color;
+  background-color: color.adjust(vars.$background-color, $lightness: 40%);
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
   white-space: nowrap;

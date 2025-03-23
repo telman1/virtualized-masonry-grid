@@ -1,17 +1,19 @@
+@use "../utils/variables" as vars;
+
 .no-data-container {
   text-align: center;
   margin: 2rem auto;
   max-width: 400px;
-  border-radius: $border-radius;
+  border-radius: vars.$border-radius;
 
   h2 {
     font-size: 1.8rem;
-    color: $secondary-color;
+    color: vars.$secondary-color;
     margin-bottom: 0.5rem;
   }
 
   p {
     font-size: 1rem;
-    color: $secondary-color;
+    color: vars.$secondary-color;
   }
 }

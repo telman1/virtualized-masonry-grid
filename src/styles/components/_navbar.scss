@@ -1,3 +1,6 @@
+@use "../utils/variables" as vars;
+@use "sass:map";
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -8,7 +11,7 @@
 .title {
   font-size: 1.5rem;
   font-weight: bold;
-  color: $secondary-color;
+  color: vars.$secondary-color;
 }
 
 .search-input {
@@ -18,10 +21,10 @@
   width: 200px;
 }
 
-@media (max-width: map-get($breakpoints, small)) {
+@media (max-width: map.get(vars.$breakpoints, small)) {
   .navbar {
     flex-direction: column;
-    gap: 0.5rem;
+    padding: 10px;
   }
 
   .search-input {
