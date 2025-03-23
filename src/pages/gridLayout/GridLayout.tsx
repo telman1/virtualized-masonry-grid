@@ -1,9 +1,9 @@
-import { useImages } from "../../context/ImageContext.tsx";
-import { UI_TEXT } from "../../helpers/constants.ts";
-import Card from "../../components/card/Card.tsx";
-import NoDataFound from "../../components/noDataFound/NoDataFound.tsx";
-import Navbar from "../../components/navbar/Navbar.tsx";
-import Loading from "../../components/loading/Loading.tsx";
+import { useImages } from "@/context/ImageContext.tsx";
+import { UI_TEXT } from "@/helpers/constants.ts";
+import Card from "@/components/card/Card.tsx";
+import NoDataFound from "@/components/noDataFound/NoDataFound.tsx";
+import Navbar from "@/components/navbar/Navbar.tsx";
+import Loading from "@/components/loading/Loading.tsx";
 
 const GridLayout = () => {
   const { images, nextPage, filteredImages } = useImages();

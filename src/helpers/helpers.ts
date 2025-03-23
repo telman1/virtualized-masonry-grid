@@ -1,7 +1,7 @@
 import {Size} from "../types/types.ts";
 
 export const setImageSize = (width: number, height: number) => {
-  let className;
+  let className = ''
 
   if(width < height) {
     // tall
@@ -14,7 +14,7 @@ export const setImageSize = (width: number, height: number) => {
     // wide
     if (width > 4000) {
       className = 'wide'
-    } else {
+    } else if (width > 3000) {
       className = 'big'
     }
   }

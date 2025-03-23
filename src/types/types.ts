@@ -1,5 +1,5 @@
-export interface Image {
-  id: string;
+export interface ImageInterface {
+  id: string | number;
   width: number;
   height: number;
   src: {
@@ -12,15 +12,15 @@ export interface Image {
   photographer: string;
 }
 
-export interface ImageDataType {
-  width: number;
-  height: number;
-  src: {
-    large2x: string;
-  };
-  alt: string;
-  photographer: string;
-}
+// export interface ImageDataType {
+//   width: number;
+//   height: number;
+//   src: {
+//     large2x: string;
+//   };
+//   alt: string;
+//   photographer: string;
+// }
 
 export interface Size {
   width: number;

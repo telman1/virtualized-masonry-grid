@@ -1,3 +1,6 @@
+@use '../utils/variables' as vars;
+@use "sass:map";
+
 img {
   max-width: 100%;
   height: auto;
@@ -35,5 +38,17 @@ img {
   .big-tall {
     grid-column: span 2;
     grid-row: span 4;
+  }
+
+  @media (max-width: map.get(vars.$breakpoints, 'small')) {
+    grid-template-columns: 1fr;
+
+    .wide,
+    .tall,
+    .big,
+    .big-tall {
+      grid-column: span 1;
+      width: 100%;
+    }
   }
 }

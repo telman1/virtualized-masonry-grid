@@ -24,7 +24,7 @@
 @media (max-width: map.get(vars.$breakpoints, small)) {
   .navbar {
     flex-direction: column;
-    gap: 0.5rem;
+    padding: 10px;
   }
 
   .search-input {

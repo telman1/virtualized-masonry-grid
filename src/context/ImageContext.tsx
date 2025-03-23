@@ -1,19 +1,19 @@
 import { createContext, useContext, useState, useEffect, ReactNode, useMemo, useCallback } from "react";
-import { Image } from "../types/types";
+import { ImageInterface } from "../types/types";
 import { createClient } from "pexels";
 
 const clientId = import.meta.env.VITE_PEXELS_ACCESS_KEY;
 const client = createClient(clientId);
 
 interface ImageContextType {
-  images: Image[];
+  images: ImageInterface[];
   loading: boolean;
   error: string | null;
   nextPage: () => void;
-  filteredImages: Image[];
+  filteredImages: ImageInterface[];
   searchTerm: string;
   setSearchTerm: (term: string) => void;
-  setImages: (images: Image[]) => void;
+  setImages: (images: ImageInterface[]) => void;
 }
 
 const ImageContext = createContext<ImageContextType | undefined>(undefined);
@@ -21,7 +21,7 @@ const ImageContext = createContext<ImageContextType | undefined>(undefined);
 export const ImageProvider = ({ children }: { children: ReactNode }) => {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
-  const [images, setImages] = useState<Image[]>([]);
+  const [images, setImages] = useState<ImageInterface[]>([]);
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
 
@@ -41,7 +41,7 @@ export const ImageProvider = ({ children }: { children: ReactNode }) => {
       const res = await client.photos.curated({ page, per_page: 40 });
 
       if ("photos" in res && Array.isArray(res.photos)) {
-        const newPhotos: Image[] = res.photos.map((photo) => ({
+        const newPhotos: ImageInterface[] = res.photos.map((photo) => ({
           id: photo.id.toString(),
           width: photo.width,
           height: photo.height,

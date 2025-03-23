@@ -1,11 +1,11 @@
-import { setImageSize } from "../../helpers/helpers.ts";
+import { setImageSize } from "@/helpers/helpers.ts";
 import { Link } from "react-router-dom";
-import { ROUTES } from "../../helpers/constants.ts";
+import { ROUTES } from "@/helpers/constants.ts";
 import { memo } from "react";
-import {Image} from "../../types/types.ts";
+import {ImageInterface} from "@/types/types.ts";
 
 interface CardProps {
-  image: Image;
+  image: ImageInterface;
 }
 const Card = ({ image } : CardProps) => {
   if (!image?.src?.large) return null;

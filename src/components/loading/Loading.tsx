@@ -1,4 +1,4 @@
-import {UI_TEXT} from "../../helpers/constants.ts";
+import {UI_TEXT} from "@/helpers/constants.ts";
 
 const Loading = () => {
   return (

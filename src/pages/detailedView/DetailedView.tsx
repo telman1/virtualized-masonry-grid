@@ -1,19 +1,18 @@
 import { useEffect, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { createClient } from "pexels";
-import { calculateImageContainerSize } from "../../helpers/helpers.ts";
+import { calculateImageContainerSize } from "@/helpers/helpers.ts";
 import { UI_TEXT } from "@/helpers/constants.ts";
-import { ImageDataType } from "@/types/types.ts";
-import Loading from "../../components/loading/Loading.tsx";
+import Loading from "@/components/loading/Loading.tsx";
 import "@/styles/pages/_detailed-view.scss";
+import { ImageInterface } from "@/types/types.ts";
 
 const clientId = import.meta.env.VITE_PEXELS_ACCESS_KEY;
 const client = createClient(clientId);
-
 const DetailedView = () => {
   const { imageId } = useParams();
   const navigate = useNavigate();
-  const [imageData, setImageData] = useState<ImageDataType | null>(null);
+  const [imageData, setImageData] = useState<ImageInterface | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [windowSize, setWindowSize] = useState({
     width: window.innerWidth,
@@ -29,7 +28,7 @@ const DetailedView = () => {
     try {
       const img = await client.photos.show({ id: imageId });
       if (img) {
-        setImageData(img as ImageDataType);
+        setImageData(img as ImageInterface);
       } else {
         setError("Image not found");
       }
@@ -42,6 +41,9 @@ const DetailedView = () => {
     { width: imageData?.width ?? 0, height: imageData?.height ?? 0 },
     { width: windowSize.width * 0.9, height: windowSize.height * 0.8 }
   );
+
+  console.log(windowSize.width);
+  console.log(windowSize.width* 0.9);
 
   useEffect(() => {
     fetchImage();
