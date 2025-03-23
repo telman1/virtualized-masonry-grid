@@ -1,7 +1,7 @@
 import {Size} from "../types/types.ts";
 
-export const setImageSize = (width, height) => {
-  let className = 'original';
+export const setImageSize = (width: number, height: number) => {
+  let className;
 
   if(width < height) {
     // tall
