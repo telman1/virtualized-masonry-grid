@@ -14,12 +14,14 @@ const Card = ({ image } : CardProps) => {
     <div className={setImageSize(image.width, image.height)}>
       <Link to={ROUTES.getGridItemPath(image.id)} className="grid-image">
         <div className="grid-image-name">{image.photographer}</div>
-        <img
-          className="grid-image"
-          src={image.src.large}
-          alt={image.alt || "Image"}
-          loading="lazy"
-        />
+        <picture>
+          <img
+            className="grid-image"
+            src={image.src.large}
+            alt={image.alt || "Image"}
+            loading="lazy"
+          />
+        </picture>
       </Link>
     </div>
   );

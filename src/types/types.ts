@@ -12,15 +12,6 @@ export interface ImageInterface {
   photographer: string;
 }
 
-// export interface ImageDataType {
-//   width: number;
-//   height: number;
-//   src: {
-//     large2x: string;
-//   };
-//   alt: string;
-//   photographer: string;
-// }
 
 export interface Size {
   width: number;
