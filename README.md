@@ -33,8 +33,35 @@ Create a **`.env`** file in the root directory and add:
 ```env
 VITE_PEXELS_ACCESS_KEY=your_pexels_api_key
 ```
+If you don't have key generate it
+```
+How to Get Your Pexels API Key
+1️⃣ Go to the Pexels Developer Portal
+
+Visit: https://www.pexels.com/api/
+
+2️⃣ Sign Up or Log In
+
+If you don’t have an account, create one.
+
+If you already have an account, log in.
+
+3️⃣ Request an API Key
+
+Once logged in, click on "Your API Key".
+
+Click "Generate API Key".
+
+Copy the generated key.
+
+4️⃣ Add the API Key to Your Project
+
+Open your .env file in your project root.
+
+Paste the API key like this:
 
 ### **4️⃣ Run the Development Server**
+```
 ```bash
 yarn dev
 ```
@@ -50,8 +77,11 @@ This generates an optimized production build and serves it locally.
 ---
 
 ## 🎨 **Design Decisions**
-### **Virtualized Grid for Efficiency**
-The grid uses **virtualization** to render only the visible images, reducing **DOM size** and **improving performance**.
+###Optimized Grid Rendering
+
+The grid is designed to efficiently render images by ensuring that only relevant content is displayed at any given time. While full virtualization is not implemented, performance is optimized through lazy loading, efficient state management, and minimal re-renders. This reduces DOM size and enhances scrolling performance without unnecessary memory consumption.
+
+###Paginating API results instead of fetching everything at once.
 
 ### **Lazy Loading for Images**
 ```tsx
@@ -81,14 +111,13 @@ const DetailedView = React.lazy(() => import("./pages/detailedView/DetailedView"
     />
   </picture>
 ```
-### **Virtualized Rendering**
-- **Only visible images are rendered dynamically using `useMemo()`**.
+### **VOptimized Rendering with Memoization**
+- **useMemo() is used to prevent unnecessary recalculations and re-renders, ensuring that only relevant images are processed dynamically**.
 
+  
 ### **Bundle Analysis with Vite Visualizer**
-Vite Visualizer helps analyze and optimize **bundle size**. Install it:
+Vite Visualizer helps analyze and optimize **bundle size**. 
 
-```
-```
 Modify `vite.config.ts`:
 ```
 mode === "development"  to  mode !== "development"
