@@ -42,9 +42,6 @@ const DetailedView = () => {
     { width: windowSize.width * 0.9, height: windowSize.height * 0.8 }
   );
 
-  console.log(windowSize.width);
-  console.log(windowSize.width* 0.9);
-
   useEffect(() => {
     fetchImage();
   }, [fetchImage]);
