@@ -109,7 +109,7 @@ const DetailedView = React.lazy(() => import("./pages/detailedView/DetailedView"
       alt={image.alt || "Image"}
       loading="lazy"
     />
-  </picture>
+</picture>
 ```
 ### **VOptimized Rendering with Memoization**
 - **useMemo() is used to prevent unnecessary recalculations and re-renders, ensuring that only relevant images are processed dynamically**.
