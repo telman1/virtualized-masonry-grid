@@ -59,7 +59,7 @@ Copy the generated key.
 Open your .env file in your project root.
 
 Paste the API key like this:
-
+```
 ### **4️⃣ Run the Development Server**
 ```
 ```bash
